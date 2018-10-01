@@ -1,9 +1,9 @@
 namespace :db do
     desc "Rebuild the development database from scratch"
-    task :rebuild => :enviromnment do
+    task :rebuild => :environment do
         sh "rm -f db/development.salite3"
         Rake::Task["db:migrate"].invoke
-        Rake::Task["db.seed"].invoke
+        Rake::Task["db:seed"].invoke
     end
 end
 
